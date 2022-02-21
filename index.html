@@ -1,0 +1,153 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,user-scalable=no,minimum-scale=1,maximum-scale=1"><title>Lost Home World</title><script defer="defer" src="vendors.b5aa1d6a1411f939b67a.bundle.js"></script><script defer="defer" src="main.4409e655aff71b65f1bb.bundle.js"></script></head><body><div id="container"><div id="video-wrapper" class="hide"><video playsinline loop id="mobile-preview"><source src="mobile-preview.mp4" type="video/mp4"></video></div><section id="ticker" class="hide"><div class="scroll"><div class="scroll-text">This is just a video preview. For full experience please view on a desktop computer.</div><div class="scroll-text">This is just a video preview. For full experience please view on a desktop computer.</div></div></section><canvas id="canvas"></canvas></div></body></html><style>html, body {
+        background: black;
+        font-family: "Arial Narrow", Arial, sans-serif;
+        font-stretch: condensed;
+        margin: 0;
+        height: 100%;
+    }
+    .scroll-text {
+        margin: 0;
+        position: absolute;
+        top: 6%;
+        transform: translateY(-6%);
+    }
+    .scroll div {
+        width: 100%;
+        white-space: nowrap;
+        position: absolute;
+        animation: animate 20s linear infinite;
+        animation-delay: -20s;
+    }
+
+    section {
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        background: #695fdc;
+        color: #dadad8;
+        height: 3.5vh;
+        font-size: 2.5vh;
+        overflow: hidden;
+
+    }
+    section .scroll {
+        height: 100%;
+        width: 100%;
+    }
+
+    .scroll div:nth-child(2){
+        animation: animate2 20s linear infinite;
+        animation-delay: -10s;
+    }
+
+    @keyframes animate {
+        0% {
+            transform: translateX(100%)
+        }
+        100% {
+            transform: translateX(-100%)
+        }
+
+    }
+    @keyframes animate2 {
+        0% {
+            transform: translateX(0%)
+        }
+        100% {
+            transform: translateX(-200%)
+        }
+
+    }
+
+
+    #video-wrapper {
+        position: fixed;
+        object-fit: fill;
+        right: 0;
+        bottom: 0;
+        min-width: 100%;
+        min-height: 100%;
+    }
+    #mobile-preview {
+        height: 100%;
+        min-height: 100%;
+        width: auto;
+        position: absolute;
+        top: -9999px;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        margin: auto;
+    }
+    .hide {
+        display: none!important;
+
+    }
+    .start-btn:hover {
+        background-color: #695fdc;
+        color: #dadad8;
+    }
+    .btn {
+        font-family: "Arial Narrow", Arial, sans-serif;
+        font-stretch: condensed;
+        margin-top: 1.9vw;
+        cursor:pointer;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 1vw;
+        border-radius: .4vw;
+        width: 9vw;
+    }
+    .loading-btn {
+        color: #dadad8;
+        border: 1px solid #928cd5;
+        background-color: #928cd5;
+    }
+    .start-btn {
+        color: #695fdc;
+        border: 1px solid #695fdc;
+        background-color: #dadad8;
+    }
+    .loading-body {
+        margin: 0;
+        width: 60%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    .logo {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #695fdc;
+    }
+
+    #loading {
+        position: absolute;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #dadad8;
+        opacity: 1;
+    }
+    #canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    @media (max-width: 500px) {
+        .loading-body {
+            width: 90%;
+        }
+        .btn {
+            font-size: 10px;
+            border-radius: 4px;
+            width: 90px;
+            margin-top: 20px;
+        }
+    }</style>
